@@ -1,0 +1,123 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  
+}
+body{
+  background: linear-gradient(to right, rgb(183, 80, 80), rgb(58, 58, 176));
+}
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #212529;
+  color: white;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, rgb(35, 45, 151), rgb(183, 28, 28));
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  i{
+    cursor: pointer;
+  }
+  span{
+    font-weight: bold;
+    color: white;
+  }
+}
+.shop{
+  display: grid;
+  grid-template-columns: repeat(4, 223px);
+  gap: 30px;
+  justify-content: center;
+  .card{
+    border: 2px solid #212529;
+    border-radius: 10px;
+    background-color: white;
+    .card-top{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      i{
+        font-size:30px;
+        margin:10px;
+      }
+      p{
+        color: green;
+        margin:10px;
+      }
+    }
+    .card-body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img{
+        width:200px;
+      }
+    }
+    .card-footer{
+
+      .name-heart{
+        display: flex;
+        justify-content: space-between;
+        button{
+          border: none;
+          background: transparent;
+        }
+        i{
+          font-size: 10px;
+        }
+      }
+      .purchase{
+        display: flex;
+        justify-content: space-between;
+        p{
+          color: green;
+        }
+        .buttons{
+          display: flex;
+          i{
+            margin:4px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .shop {
+    grid-template-columns: repeat(2, 223px);
+  }
+}
+
+@media (max-width: 500px) {
+  .shop {
+    grid-template-columns: repeat(1, 223px);
+  }
+}
+.shopping-cart{
+  display: grid;
+  grid-template-columns: repeat(1,500px);
+  
+  gap: 5px;
+  justify-content: center;
+  .cart-item{
+    background-color: white;
+
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    .card-right{
+      display: flex;
+      width: 100%;
+    }
+    .buttons-total{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

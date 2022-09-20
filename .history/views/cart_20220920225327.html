@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="index.html">
+      <h2>Trung's Phone</h2>
+    </a>
+    <a href="cart.html">
+      <div class="cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-amount" class="total-qty">0</span>
+      </div>
+    </a>
+  </div>
+  <div class="text-center my-4" id="label"></div>
+
+  <div class="shopping-cart" id="shopping-cart"></div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../models/ProductList.js"></script>
+  <script src="../services/productAPI.js"></script>
+  <script src="../controllers/cart.js"></script>
+</body>
+
+</html>
+<div class="cart-item">
+  <img width="100px" src="${search.img}" alt="" />
+  <div class="title-price-x">
+    <h4 class="title-price">
+      <p>${search.name}</p>
+      <p class="cart-item-price">$${search.price}</p>
+    </h4>
+    <i onclick="removeItem(${id})" class="fa-thin fa-x"></i>
+  </div>
+  <div class="buttons" id="btn-add">
+    <i onclick="decrementCart(${id})" class="fa-solid fa-angle-left" data-type="subtract"></i>
+    <div id=${id} class="quantity">${item}</div>
+    <i onclick="incrementCart(${id})" class="fa-solid fa-angle-right" data-type="add"></i>
+  </div>
+  <h3>$${item * search.price}</h3>
+</div>
