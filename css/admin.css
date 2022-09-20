@@ -1,1 +1,19 @@
-/*# sourceMappingURL=admin.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, rgb(183, 80, 80), rgb(58, 58, 176));
+}
+
+.navbar {
+  color: white;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, rgb(35, 45, 151), rgb(183, 28, 28));
+}
+
+.header {
+  font-weight: bold;
+}/*# sourceMappingURL=admin.css.map */

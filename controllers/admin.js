@@ -1,7 +1,7 @@
 getProducts();
 
-function getProducts() {
-  apiGetProduct()
+function getProducts(searchTerm) {
+  apiGetProduct(searchTerm)
     .then((response) => {
       console.log("API products:", response.data);
       let products = response.data.map((product) => {
@@ -171,6 +171,11 @@ dom("#tblSanPham").addEventListener("click", (evt) => {
       });
   }
 });
+dom("#search").addEventListener("keydown", (evt) => {
+  console.log(evt.key);
+  if (evt.key === "Enter") return;
+  getProducts(evt.target.value);
+});
 // =====================validate============================
 function validateName() {
   let name = dom("#name").value;
@@ -179,6 +184,9 @@ function validateName() {
   if (!name) {
     spanEl.innerHTML = "Tên không được để trống";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validatePrice() {
@@ -191,6 +199,9 @@ function validatePrice() {
   } else if (price <= 0) {
     spanEl.innerHTML = "Giá không Hợp lệ";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validateScreen() {
@@ -200,6 +211,9 @@ function validateScreen() {
   if (!screen) {
     spanEl.innerHTML = "Màn hình không được để trống";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validateBCamera() {
@@ -209,6 +223,9 @@ function validateBCamera() {
   if (!backCamera) {
     spanEl.innerHTML = "Camera không được để trống";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validateFCamera() {
@@ -218,6 +235,9 @@ function validateFCamera() {
   if (!frontCamera) {
     spanEl.innerHTML = "Camera không được để trống";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validateImage() {
@@ -227,6 +247,9 @@ function validateImage() {
   if (!img) {
     spanEl.innerHTML = "Hình ảnh không được để trống";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validateDesc() {
@@ -236,6 +259,9 @@ function validateDesc() {
   if (!desc) {
     spanEl.innerHTML = "Mô tả không được để trống";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validateType() {
@@ -245,6 +271,9 @@ function validateType() {
   if (!type) {
     spanEl.innerHTML = "Mô tả không được để trống";
     return false;
+  } else {
+    spanEl.innerHTML = "";
+    return true;
   }
 }
 function validateForm() {
