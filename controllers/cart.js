@@ -123,7 +123,13 @@ function clearCart() {
   calcCart();
   localStorage.setItem("data", JSON.stringify(cart));
 }
-function pay() {}
+function pay() {
+  cart = [];
+  displayCartProducts();
+  calcCart();
+  localStorage.setItem("data", JSON.stringify(cart));
+  alert("Bạn đã thanh toán thành công");
+}
 function totalAmount() {
   if (cart.length !== 0) {
     let amount = cart
@@ -135,7 +141,7 @@ function totalAmount() {
       .reduce((sum, item) => sum + item, 0);
     label.innerHTML = `
       <h2>Total bill: $${amount}</h2>
-      <button onclick="pay" class="btn btn-success">Pay</button>
+      <button onclick="pay()" class="btn btn-success">Pay</button>
       <button onclick="clearCart()" class="btn btn-danger">Clear Cart</button>
       `;
   } else {
